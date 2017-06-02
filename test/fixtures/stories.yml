@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plot: MyString
+  writer: MyString
+  upvotes: 1
+
+two:
+  plot: MyString
+  writer: MyString
+  upvotes: 1

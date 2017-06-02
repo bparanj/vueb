@@ -1,24 +1,31 @@
-# README
+rails new vueb --api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+gem 'faker'
 
-Things you may want to cover:
+bundle
 
-* Ruby version
+https://github.com/stympy/faker
 
-* System dependencies
+id : integer
+plot : string
+writer : string
+upvotes : integer
 
-* Configuration
+rails g scaffold story plot writer upvotes:integer
 
-* Database creation
+plot - lorem - Faker::Lorem.sentence
+writer - name -  Faker::Name.name    
+upvotes - number - Faker::Number.between(1, 200) 
 
-* Database initialization
+seeds.rb:
 
-* How to run the test suite
+100.times do
+  Story.create(plot: Faker::Lorem.sentence, writer: Faker::Name.name, upvotes: Faker::Number.between(1, 200))
+end
 
-* Services (job queues, cache servers, search engines, etc.)
+rails db:migrate
 
-* Deployment instructions
+rails db:seed
 
-* ...
+You can now view the JSON : http://localhost:3000/stories
+
