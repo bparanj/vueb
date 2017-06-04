@@ -3,9 +3,9 @@ class StoriesController < ApplicationController
 
   # GET /stories
   def index
-    @stories = Story.all
-
-    render json: @stories
+    stories = Story.paginate(page: params[:page_number], per_page: 10)
+    
+		render json: stories
   end
 
   # GET /stories/1
